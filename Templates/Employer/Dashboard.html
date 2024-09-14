@@ -1,0 +1,248 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      @container(max-width:120px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-120{display: none;}}
+      @container(max-width:240px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-240{display: none;}}
+      @container(max-width:360px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-360{display: none;}}
+      @container(max-width:480px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-480{display: none;}}
+      @container(max-width:600px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-600{display: none;}}
+    </style>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#FFFFFF] group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-80">
+            <div class="flex h-full min-h-[700px] flex-col justify-between bg-[#FFFFFF] p-4">
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style="background-image: url(&quot;https://cdn.usegalileo.ai/stability/c4569aad-f00d-4a14-b6a5-e4e417b4f11d.png&quot;);"></div>
+                        <h1 class="text-black text-base font-medium leading-normal">Samantha</h1>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <a href="{{ url_for('employer_dashboard') }}" class="flex items-center gap-3 px-3 py-2 text-black rounded-xl bg-[#EEEEEE] hover:bg-gray-100 rounded">
+                        <div class="text-black" data-icon="House" data-size="24px" data-weight="regular">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path>
+                          </svg>
+                        </div>
+                        <p class="text-black text-sm font-medium leading-normal">Dashboard</p>
+                      </a>
+                      <a href="{{ url_for('job_listings') }}" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 rounded">
+                        <div class="text-black" data-icon="List" data-size="24px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M224,120v16a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V120a8,8,0,0,1,8-8H216A8,8,0,0,1,224,120Zm-8,56H40a8,8,0,0,0-8,8v16a8,8,0,0,0,8,8H216a8,8,0,0,0,8-8V184A8,8,0,0,0,216,176Zm0-128H40a8,8,0,0,0-8,8V72a8,8,0,0,0,8,8H216a8,8,0,0,0,8-8V56A8,8,0,0,0,216,48Z"></path>
+                          </svg>
+                        </div>
+                        <p class="text-black text-sm font-medium leading-normal">Job Listings</p>
+                      </a>
+                      <a href="{{ url_for('new_job') }}" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 rounded">
+                        <div class="text-black" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                          </svg>
+                        </div>
+                        <p class="text-black text-sm font-medium leading-normal">New Job</p>
+                      </a>
+                      <a href="{{ url_for('candidates') }}" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 rounded">
+                        <div class="text-black" data-icon="UsersThree" data-size="24px" data-weight="regular">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M244.8,150.4a8,8,0,0,1-11.2-1.6A51.6,51.6,0,0,0,192,128a8,8,0,0,1-7.37-4.89,8,8,0,0,1,0-6.22A8,8,0,0,1,192,112a24,24,0,1,0-23.24-30,8,8,0,1,1-15.5-4A40,40,0,1,1,219,117.51a67.94,67.94,0,0,1,27.43,21.68A8,8,0,0,1,244.8,150.4Z"></path>
+                          </svg>
+                        </div>
+                        <p class="text-black text-sm font-medium leading-normal">Candidates</p>
+                      </a>                      
+                    </div>
+                  </div>
+                  <form action="{{ url_for('logout') }}" method="post" class="flex flex-col">
+                    <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-[#FFFFFF] text-sm font-bold leading-normal tracking-[0.015em]"
+                  >
+                    <span class="truncate">Log out</span>
+                  </button>
+                  </form>
+                  
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p class="text-black text-4xl font-black leading-tight tracking-[-0.033em]">Welcome, Samantha.</p>
+                <p class="text-[#6B6B6B] text-base font-normal leading-normal">You have 3 active jobs. View all your jobs</p>
+              </div>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#EEEEEE] text-black text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">View all your jobs</span>
+              </button>
+            </div>
+            <div class="px-4 py-3 @container">
+                <div class="flex overflow-hidden rounded-xl border border-[#DEDEDE] bg-[#FFFFFF]">
+                  <table class="flex-1">
+                    <thead>
+                      <tr class="bg-[#FFFFFF]">
+                        <th class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-120 px-4 py-3 text-left text-black w-[400px] text-sm font-medium leading-normal">Title</th>
+                        <th class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-240 px-4 py-3 text-left text-black w-[400px] text-sm font-medium leading-normal">Posted</th>
+                        <th class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-360 px-4 py-3 text-left text-black w-[400px] text-sm font-medium leading-normal">Views</th>
+                        <th class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-480 px-4 py-3 text-left text-black w-[400px] text-sm font-medium leading-normal">Applies</th>
+                        <th class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-600 px-4 py-3 text-left text-black w-60 text-sm font-medium leading-normal">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-t border-t-[#DEDEDE]">
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-120 h-[72px] px-4 py-2 w-[400px] text-black text-sm font-normal leading-normal">
+                          Software Engineer
+                        </td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-240 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">
+                          3 days ago
+                        </td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-360 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">15</td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-480 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">5</td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-600 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                          <button
+                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-black text-sm font-medium leading-normal w-full"
+                          >
+                            <span class="truncate">Active</span>
+                          </button>
+                        </td>
+                      </tr>
+                      </tr>
+                      <tr class="border-t border-t-[#DEDEDE]">
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-120 h-[72px] px-4 py-2 w-[400px] text-black text-sm font-normal leading-normal">
+                          Sales Representative
+                        </td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-240 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">
+                          1 days ago
+                        </td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-360 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">25</td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-480 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">9</td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-600 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                          <button
+                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-black text-sm font-medium leading-normal w-full"
+                          >
+                            <span class="truncate">Active</span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr class="border-t border-t-[#DEDEDE]">
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-120 h-[72px] px-4 py-2 w-[400px] text-black text-sm font-normal leading-normal">
+                          Customer Service
+                        </td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-240 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">
+                          5 days ago
+                        </td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-360 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">12</td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-480 h-[72px] px-4 py-2 w-[400px] text-[#6B6B6B] text-sm font-normal leading-normal">3</td>
+                        <td class="table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-600 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                          <button
+                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-black text-sm font-medium leading-normal w-full"
+                          >
+                            <span class="truncate">Active</span>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <style>
+                  @container(max-width:120px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-120{display: none;}}
+                  @container(max-width:240px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-240{display: none;}}
+                  @container(max-width:360px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-360{display: none;}}
+                  @container(max-width:480px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-480{display: none;}}
+                  @container(max-width:600px){.table-bb9306c1-5a1f-4c2c-a441-4ffb78a5c2f6-column-600{display: none;}}
+                </style>
+              </div>
+            <h2 class="text-black text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Other actions</h2>
+            <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-14 justify-between">
+              <div class="flex items-center gap-4">
+                <div class="text-black flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-10" data-icon="UserCircle" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-black text-base font-normal leading-normal flex-1 truncate">Manage your profile</p>
+              </div>
+              <div class="shrink-0"><button class="text-base font-medium leading-normal">Manage</button></div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+              <div class="flex items-center gap-4">
+                <div class="text-black flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="ToggleRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M176,56H80a72,72,0,0,0,0,144h96a72,72,0,0,0,0-144Zm0,128H80A56,56,0,0,1,80,72h96a56,56,0,0,1,0,112Zm0-96a40,40,0,1,0,40,40A40,40,0,0,0,176,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,176,152Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <p class="text-black text-base font-medium leading-normal line-clamp-1">Account settings</p>
+                </div>
+              </div>
+              <div class="shrink-0"><button class="text-base font-medium leading-normal">Manage</button></div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-14 justify-between">
+              <div class="flex items-center gap-4">
+                <div class="text-black flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-10" data-icon="ArrowCircleUp" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1-11.32,11.32L136,107.31V168a8,8,0,0,1-16,0V107.31l-18.34,18.35a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0Z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-black text-base font-normal leading-normal flex-1 truncate">Help center</p>
+              </div>
+              <div class="shrink-0"><button class="text-base font-medium leading-normal">Manage</button></div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

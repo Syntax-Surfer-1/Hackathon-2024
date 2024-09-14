@@ -1,0 +1,440 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>New Job</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <style>
+
+      .modal {
+
+          inset: 0;
+          display: none;
+      }
+      .modal:target {
+          display: block;
+      }
+      .test:target{
+        display: none;
+      }
+
+
+  </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#FFFFFF] group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-80">
+            <div class="flex h-full min-h-[700px] flex-col justify-between bg-[#FFFFFF] p-4">
+              <div class="flex flex-col gap-4">
+                  <div class="flex gap-3">
+                      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style="background-image: url(&quot;https://cdn.usegalileo.ai/stability/c4569aad-f00d-4a14-b6a5-e4e417b4f11d.png&quot;);"></div>
+                      <h1 class="text-black text-base font-medium leading-normal">Samantha</h1>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <a href="{{ url_for('mentor_dashboard') }}" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 rounded">
+                      <div class="text-black" data-icon="House" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                          <path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path>
+                        </svg>
+                      </div>
+                      <p class="text-black text-sm font-medium leading-normal">Dashboard</p>
+                    </a>
+                    
+                    <a href="{{ url_for('mentor_courses') }}" class="flex items-center gap-3 px-3 py-2 text-black  hover:bg-gray-100 rounded">
+                      <div class="text-black" data-icon="List" data-size="24px" data-weight="fill">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                          <path d="M216,32V192a8,8,0,0,1-8,8H72a16,16,0,0,0-16,16H192a8,8,0,0,1,0,16H48a8,8,0,0,1-8-8V56A32,32,0,0,1,72,24H208A8,8,0,0,1,216,32Z"></path>
+                        </svg>
+                      </div>
+                      <p class="text-black text-sm font-medium leading-normal">Courses</p>
+                    </a>
+                    
+                    <a href="{{ url_for('mentor_add_courses') }}" class="flex items-center gap-3 px-3 py-2 text-black rounded-xl bg-[#EEEEEE] hover:bg-gray-100 rounded">
+                      <div class="text-black" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      </div>
+                      <p class="text-black text-sm font-medium leading-normal">Add Courses</p>
+                    </a>
+                    
+                    <a href="{{ url_for('mentor_sales') }}" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 rounded">
+                      <div class="text-black" data-icon="Briefcase" data-size="24px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                          <path
+                            d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM240,56H16a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H240a8,8,0,0,0,8-8V64A8,8,0,0,0,240,56ZM193.65,184H62.35A56.78,56.78,0,0,0,24,145.65v-35.3A56.78,56.78,0,0,0,62.35,72h131.3A56.78,56.78,0,0,0,232,110.35v35.3A56.78,56.78,0,0,0,193.65,184ZM232,93.37A40.81,40.81,0,0,1,210.63,72H232ZM45.37,72A40.81,40.81,0,0,1,24,93.37V72ZM24,162.63A40.81,40.81,0,0,1,45.37,184H24ZM210.63,184A40.81,40.81,0,0,1,232,162.63V184Z"
+                          ></path>
+                      </div>
+                      <p class="text-black text-sm font-medium leading-normal">Sales</p>
+                    </a>
+                    
+                  </div>
+                </div>
+                <form action="{{ url_for('logout') }}" method="post" class="flex flex-col">
+                  <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-black text-[#FFFFFF] text-sm font-bold leading-normal tracking-[0.015em]"
+                >
+                  <span class="truncate">Log out</span>
+                </button>
+                </form>
+          </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#111517] tracking-light text-[32px] font-bold leading-tight min-w-72">Create a Course</p></div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+            </div>
+            
+
+
+
+
+            <div class="modal" id="modal">
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-14 justify-between">
+                <div class="flex items-center gap-4">
+                  <label class="flex flex-col min-w-40 flex-1">
+                    <input
+                      placeholder="Module Title.."
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111517] focus:outline-0 focus:ring-0 border-none bg-[#f0f3f4] focus:border-none h-14 placeholder:text-[#647987] p-4 text-base font-normal leading-normal"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#000000] text-[#FFFFFF] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Uplode</span>
+                  </button>
+                </div>
+              </div><br><hr>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#0e141b] flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="File" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M164.44,105.34l-48-32A8,8,0,0,0,104,80v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,129.05V95l25.58,17ZM216,40H40A16,16,0,0,0,24,56V168a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,128H40V56H216V168Zm16,40a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Z"
+                        ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">product_demo.mp4</p>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal line-clamp-2">3.4MB Video 2/10/22</p>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-[#0e141b] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Watch</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#0e141b] flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="File" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M164.44,105.34l-48-32A8,8,0,0,0,104,80v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,129.05V95l25.58,17ZM216,40H40A16,16,0,0,0,24,56V168a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,128H40V56H216V168Zm16,40a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Z"
+                        ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">product_demo.mp4</p>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal line-clamp-2">3.4MB Video 2/10/22</p>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-[#0e141b] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Watch</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#0e141b] flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="File" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M164.44,105.34l-48-32A8,8,0,0,0,104,80v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,129.05V95l25.58,17ZM216,40H40A16,16,0,0,0,24,56V168a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,128H40V56H216V168Zm16,40a8,8,0,0,1-8,8H32a8,8,0,0,1,0-16H224A8,8,0,0,1,232,208Z"
+                        ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">product_demo.mp4</p>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal line-clamp-2">3.4MB Video 2/10/22</p>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-[#0e141b] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Watch</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex flex-col justify-between gap-3 p-4"><p class="text-[#0e141b] tracking-light text-[22px] font-bold leading-tight min-w-72">Resources</p></div>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-14 justify-between">
+                <div class="flex items-center gap-4">
+                  <label class="flex flex-col min-w-40 flex-1">
+                    <input
+                      placeholder="Resources Title.."
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#111517] focus:outline-0 focus:ring-0 border-none bg-[#f0f3f4] focus:border-none h-14 placeholder:text-[#647987] p-4 text-base font-normal leading-normal"
+                      value=""
+                    />
+                  </label>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#000000] text-[#FFFFFF] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Uplode</span>
+                  </button>
+                </div>
+              </div><br><hr>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#0e141b] flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="FilePdf" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,112V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v24a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v72a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">product_guidelines.pdf</p>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal line-clamp-2">1.2MB PDF 2/13/22</p>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-[#0e141b] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Download</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#0e141b] flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="FileImage" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M110.66,147.56a8,8,0,0,0-13.32,0L76.49,178.85l-9.76-15.18a8,8,0,0,0-13.46,0l-36,56A8,8,0,0,0,24,232H152a8,8,0,0,0,6.66-12.44ZM38.65,216,60,182.79l9.63,15a8,8,0,0,0,13.39.11l21-31.47L137.05,216Zm175-133.66-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v96a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V216h-8a8,8,0,0,0,0,16h8a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">product_screenshot.png</p>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal line-clamp-2">2.4MB Image 2/9/22</p>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-[#0e141b] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Download</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#0e141b] flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="FileZip" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M184,144H168a8,8,0,0,0-8,8v56a8,8,0,0,0,16,0v-8h8a28,28,0,0,0,0-56Zm0,40h-8V160h8a12,12,0,0,1,0,24Zm-48-32v56a8,8,0,0,1-16,0V152a8,8,0,0,1,16,0ZM96,208a8,8,0,0,1-8,8H56a8,8,0,0,1-7-12l25.16-44H56a8,8,0,0,1,0-16H88a8,8,0,0,1,7,12L69.79,200H88A8,8,0,0,1,96,208ZM213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48v16a8,8,0,0,0,16,0V88A8,8,0,0,0,213.66,82.34ZM160,80V51.31L188.69,80Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">product_assets.zip</p>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal line-clamp-2">5.6MB Zip 2/8/22</p>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-[#0e141b] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Download</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#0e141b] flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="FileText" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">product_proposal.docx</p>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal line-clamp-2">1.8MB Doc 2/7/22</p>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-[#0e141b] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Download</span>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-[72px] py-2 justify-between">
+                <div class="flex items-center gap-4">
+                  <div class="text-[#0e141b] flex items-center justify-center rounded-lg bg-[#EEEEEE] shrink-0 size-12" data-icon="Link" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10A56,56,0,0,1,48.38,128.4L72.5,104.28A56,56,0,0,1,149.31,102a8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.26l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">product_website_link.url</p>
+                    <p class="text-[#4e7397] text-sm font-normal leading-normal line-clamp-2">100KB Link 2/6/22</p>
+                  </div>
+                </div>
+                <div class="shrink-0">
+                  <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#EEEEEE] text-[#0e141b] text-sm font-medium leading-normal w-fit"
+                  >
+                    <span class="truncate">Visit</span>
+                  </button>
+                  
+                </div>
+                
+              </div>
+              <div class="flex px-4 py-3">
+
+              </div>
+              <div class="flex items-center gap-4 bg-[#FFFFFF] px-4 min-h-14 justify-between">
+                <div class="shrink-0">
+                  <a href="">
+                    <button
+                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#efefef] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em]"
+                    >
+                      <span class="truncate">Back</span>
+                    </button>
+                  </a>
+                </div>
+                <div class="shrink-0">
+                  <a href="#modal">
+                    <button
+                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-black text-[#FFFFFF] text-sm font-bold leading-normal tracking-[0.015em]"
+                    >
+                      <span class="truncate">Applay</span>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3 test" id="model">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111517] text-base font-medium leading-normal pb-2">Course name*</p>
+                <input
+                  placeholder="Course name"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-black focus:outline-0 focus:ring-0 border border-[#DEDEDE] bg-[#FFFFFF] focus:border-[#DEDEDE] h-14 placeholder:text-[#6B6B6B] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+              <p class="text-[#111517] text-base font-medium leading-normal pb-2">Course description*</p>
+                <textarea
+                  placeholder="Course description"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-black focus:outline-0 focus:ring-0 border border-[#DEDEDE] bg-[#FFFFFF] focus:border-[#DEDEDE] min-h-36 placeholder:text-[#6B6B6B] p-[15px] text-base font-normal leading-normal"
+                ></textarea>
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#111517] text-base font-medium leading-normal pb-2">Price*</p>
+                <input
+                  placeholder="Price"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-black focus:outline-0 focus:ring-0 border border-[#DEDEDE] bg-[#FFFFFF] focus:border-[#DEDEDE] h-14 placeholder:text-[#6B6B6B] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex px-4 py-3">
+              <a href="#modal">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-black text-[#FFFFFF] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Continue</span>
+              </button>
+            </a>
+            </div>
+          </div>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
